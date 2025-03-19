@@ -1,17 +1,20 @@
+# Основополагающее знание.
 Уж очень мне хотелось поднять лабу на Veos для L2VPN с LDP и xconnect'ами...но не тут-то было.
 
 Но и то, что вышло, не лишено для меня смысла. 
 Итак, что мы имеем?
 
-Схема следующая :
+# Схема следующая :
 ![image](https://github.com/user-attachments/assets/a3a34d7e-d4d1-406e-a28e-b89c2b010855)
 
 ![image](https://github.com/user-attachments/assets/bafbc6d8-b9da-4683-9813-ef4d0238926b)
 
-Цель этой работы:
+# Цель этой работы:
 1. Использовать ISIS для underlay-связности между Lo0 наших PE1-PE2. 
 2. Обеспечить связность между PC1-PC2, прибегнув к связности на транспорте на уровне L2.
 3. Проверить саму связность и посмотреть на выводы всех необходимых таблиц.
+
+# Конфигурации.
 
 Для начала настроим наши PE1/PE2:
 
@@ -109,6 +112,8 @@ router isis 100
 ```
 С P2 ситуация аналогичная.
 
+#  Умозаключения.
+
 Рассмотрим поближе эти примитивные конфигуарции, но важные для понимания отличия работы isis+vxlan / bgp+evpn+vxlan.
 
 Так как ISIS предоставляет нам связность на underlay уровне, все наши узлы знают друг о друге:
@@ -145,7 +150,7 @@ interface Vxlan1
 ```
 Команда  "vxlan flood vtep 10.1.1.4" - это статическое указание соседского Vtep.
 
-# PE1#sh vxlan address-table
+ PE1#sh vxlan address-table
 
 
 | VLAN | Mac Address   | Type    | Prt | VTEP     | Moves | Last Move  |
@@ -154,7 +159,7 @@ interface Vxlan1
 
 **Total Remote Mac Addresses for this criterion: 1**
 
-# PE1#sh vxlan vtep
+ PE1#sh vxlan vtep
 
 
 | VTEP     | Tunnel Type(s)   |
