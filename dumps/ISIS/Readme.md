@@ -86,7 +86,7 @@ end
 
 В нашем случае будет выбран R2 как Dis, так как приоритет у них одинаковые по умолчанию:
 
-![image](https://github.com/user-attachments/assets/5a972aec-8e64-49f1-8960-f5124d47cefa)
+![image](https://github.com/user-attachments/assets/3ce09a24-e52f-4570-a6dd-d15357ebdfae)
 
 Произойдет выбор по лучшему MAC, а именно:
 
@@ -112,14 +112,15 @@ MAC 2: a5 (шест. 0xa5 = дес. 165)
 
 Далее посмотрим на структуру CSNP- сообщения, которое отправляется DIS в нашем случае.
 
-![image](https://github.com/user-attachments/assets/fe6d6071-e846-4160-b5ea-bd5e276afcce)
+![image](https://github.com/user-attachments/assets/f8cb7e60-4f2b-4f8f-b1bf-7bf0506a3e70)
 
 И сами сообщения LSP, например, от R1, так как там есть еще и статика:
 
-![image](https://github.com/user-attachments/assets/2589f791-c31c-40b8-9a86-cdbd97376ff1)
+![image](https://github.com/user-attachments/assets/73b9da70-0fb5-4f4c-b42c-f13683efcd28)
 
 Здесь наши передаваемые префиксы хранятся в TLV, например, TLV 132 - IP-адреса интерфейсов.
 
-![image](https://github.com/user-attachments/assets/869bd8d4-7db5-46f1-8e9f-e4048e911783)
+![image](https://github.com/user-attachments/assets/41dc1fb3-3517-4172-b959-8311f2be2e66)
+
 
 
