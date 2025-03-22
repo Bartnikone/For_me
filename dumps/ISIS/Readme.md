@@ -1,16 +1,17 @@
 Рассмотрим установления соседства на примере двух роутеров:
 
-![image](https://github.com/user-attachments/assets/7da7f00b-7359-4757-9cd5-454eaeb7acb1)
-
-![image](https://github.com/user-attachments/assets/88053a54-527f-41cd-8093-402ff1b9fe18)
+![image](https://github.com/user-attachments/assets/cb620f1e-673c-4bda-9b23-e91a5830e9b0)
 
 Дамп будем снимать с int eth1 на R1, его мак:
+
 ![image](https://github.com/user-attachments/assets/0eb6da02-6d12-4e9b-b3fc-b4a3a1295a73)
 
 Мак соседнего R2:
+
 ![image](https://github.com/user-attachments/assets/b6c22128-c1ba-4de0-a67e-8e1fdea94bb9)
 
 Опишем сразу локальные настройки, на R1:
+
 ```bash
 interface Ethernet1
    description UP_P1
@@ -64,6 +65,7 @@ end
 Итак, включаем ISIS, затем встает на eth1 у R1:
 
 И смотрим на отправленный нами Hello:
+
 ![image](https://github.com/user-attachments/assets/5cd768bd-440d-4291-8321-a09c2cb95b12)
 
 Получаем первый Hello от R2:
@@ -77,14 +79,17 @@ end
 ![image](https://github.com/user-attachments/assets/ded654e0-eafb-4fb1-b533-ffcd358e92cd)
 
 И R1 сделал, соответственно, тоже самое:
+
 ![image](https://github.com/user-attachments/assets/d943eedc-11d9-462a-8582-eba6cd6a5bd1)
 
 Так как на моих интерфейсах нет команды network ptp isis, которая означала бы отключение выбора DIS. То выбор все-таки произойдет.
 
 В нашем случае будет выбран R2 как Dis, так как приоритет у них одинаковые по умолчанию:
+
 ![image](https://github.com/user-attachments/assets/5a972aec-8e64-49f1-8960-f5124d47cefa)
 
 Произойдет выбор по лучшему MAC, а именно:
+
 ```bash
 Наши адреса:
 
@@ -114,4 +119,7 @@ MAC 2: a5 (шест. 0xa5 = дес. 165)
 ![image](https://github.com/user-attachments/assets/2589f791-c31c-40b8-9a86-cdbd97376ff1)
 
 Здесь наши передаваемые префиксы хранятся в TLV, например, TLV 132 - IP-адреса интерфейсов.
+
+![image](https://github.com/user-attachments/assets/869bd8d4-7db5-46f1-8e9f-e4048e911783)
+
 
