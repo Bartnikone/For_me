@@ -1,14 +1,14 @@
 Рассмотрим установления соседства на примере двух роутеров:
 
-![image](https://github.com/user-attachments/assets/cb620f1e-673c-4bda-9b23-e91a5830e9b0)
+![image](https://github.com/user-attachments/assets/efe8eec1-edb3-42ea-b92f-f5e783f9b748)
 
 Дамп будем снимать с int eth1 на R1, его мак:
 
-![image](https://github.com/user-attachments/assets/0eb6da02-6d12-4e9b-b3fc-b4a3a1295a73)
+![image](https://github.com/user-attachments/assets/9714f77b-4497-4450-ab51-b4f4200e5faa)
 
 Мак соседнего R2:
 
-![image](https://github.com/user-attachments/assets/b6c22128-c1ba-4de0-a67e-8e1fdea94bb9)
+![image](https://github.com/user-attachments/assets/d1b5252d-ae0d-47a6-95ed-75cb8d03bffd)
 
 Опишем сразу локальные настройки, на R1:
 
@@ -66,21 +66,21 @@ end
 
 И смотрим на отправленный нами Hello:
 
-![image](https://github.com/user-attachments/assets/5cd768bd-440d-4291-8321-a09c2cb95b12)
+![image](https://github.com/user-attachments/assets/04d1961f-c183-44f1-90af-243fa0304cdc)
 
 Получаем первый Hello от R2:
 
-![image](https://github.com/user-attachments/assets/79c28aa6-9958-403a-810d-54acf1d02ec7)
+![image](https://github.com/user-attachments/assets/475dcf5a-7232-405c-8300-c329d5c19b32)
 
 Пока что они не видят в качестве соседей друг друга, поэтому соседство не установлено.
 
 Далее R2, получив Hello от R1, добавит в качестве neighbor R1 в свой Hello:
 
-![image](https://github.com/user-attachments/assets/ded654e0-eafb-4fb1-b533-ffcd358e92cd)
+![image](https://github.com/user-attachments/assets/efe56107-caa0-4ec6-a657-d685bd7c600b)
 
 И R1 сделал, соответственно, тоже самое:
 
-![image](https://github.com/user-attachments/assets/d943eedc-11d9-462a-8582-eba6cd6a5bd1)
+![image](https://github.com/user-attachments/assets/b5bdc79d-8f4a-459f-a5a1-568daea812ab)
 
 Так как на моих интерфейсах нет команды network ptp isis, которая означала бы отключение выбора DIS. То выбор все-таки произойдет.
 
