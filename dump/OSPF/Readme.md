@@ -27,4 +27,4 @@ interface Ethernet1
 
 Сначал посылаются Hello пакеты, рассмотрим их структуру на примере сообщения от R2:
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/17a8b84e-bf60-413d-a882-e495ba73d10f)
