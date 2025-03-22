@@ -60,7 +60,7 @@ router bgp 65001
 
 ![image](https://github.com/user-attachments/assets/7948bae1-bba1-4692-ad83-43af27fd160e)
 
-Рассмотрим первый SYN и его заголовки:
+## Рассмотрим первый SYN и его заголовки:
 
 ![image](https://github.com/user-attachments/assets/e33e9f89-5528-43b9-9755-6766c0a79c25)
 
@@ -73,4 +73,20 @@ router bgp 65001
 ![image](https://github.com/user-attachments/assets/0ba362ec-2406-4ed1-bc3f-af0613fafaa6)
 
 TCP-сессия установлена, и это переход в состояние Open Sent:
+
+## Затем R1 отправляет сообщение OPEN, его структура:
+
+![image](https://github.com/user-attachments/assets/373239a0-97b7-4138-8e28-dd8ba8944ba4)
+
+R2 отправляет ответный OPEN:
+
+![image](https://github.com/user-attachments/assets/98e141a3-56ab-4ac9-9215-1f5e666d62a7)
+
+## R1 сверяет его параметры, AS, Hold Timer, версию протокола и Router ID, если параметры верны, то далее идет переход в стадию Open Confirm:
+
+![image](https://github.com/user-attachments/assets/94167ad2-37d3-41cc-8d78-4c32691ad875)
+
+Если KEEPALIVE не приходят, сессия разрывается.
+
+## После обмена OPEN и KEEPALIVE сессия переходит в статус Established
 
