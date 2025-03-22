@@ -56,4 +56,21 @@ interface Ethernet1
 router bgp 65001
    neighbor 10.0.0.0 remote-as 65000
 ```
+Конечно же, BGP строит поверх TCP, поэтому изначально наши роутеры строят TCP-сессию:
+
+![image](https://github.com/user-attachments/assets/7948bae1-bba1-4692-ad83-43af27fd160e)
+
+Рассмотрим первый SYN и его заголовки:
+
+![image](https://github.com/user-attachments/assets/e33e9f89-5528-43b9-9755-6766c0a79c25)
+
+Затем от R2 к R1 последует Syn-Ack:
+
+![image](https://github.com/user-attachments/assets/bb910d32-4699-4800-b7e0-8bbe92598c4a)
+
+И, наконец, Ack от R1 к R2:
+
+![image](https://github.com/user-attachments/assets/0ba362ec-2406-4ed1-bc3f-af0613fafaa6)
+
+TCP-сессия установлена, и это переход в состояние Open Sent:
 
