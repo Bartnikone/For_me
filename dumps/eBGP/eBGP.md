@@ -92,3 +92,5 @@ R2 отправляет ответный OPEN:
 
 Начинается обмен маршрутами через UPDATE-сообщения.
 
+![image](https://github.com/user-attachments/assets/572aaf6f-4019-4464-be8d-d61ddf959e05)
+
