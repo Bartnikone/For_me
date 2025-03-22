@@ -1,6 +1,6 @@
 Рассмотрим установления соседства на примере двух роутеров:
 
-![image](https://private-user-images.githubusercontent.com/user-attachments/assets/cb620f1e-673c-4bda-9b23-e91a5830e9b0)
+![image](https://private-user-images.githubusercontent.com/cb620f1e-673c-4bda-9b23-e91a5830e9b0)
 
 Дамп будем снимать с int eth1 на R1, его мак:
 
